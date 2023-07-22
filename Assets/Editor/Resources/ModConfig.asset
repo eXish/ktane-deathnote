@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 615501dbe4f3fe94fbf4b564abb10237, type: 3}
+  m_Name: ModConfig
+  m_EditorClassIdentifier: 
+  id: deathNoteModule
+  title: Death Note
+  author: eXish
+  description: 'Become the temporary god of the new world for 4-6 days while the real
+    Kira gets his suspicions cleared.
+
+
+    HTML: https://ktane.timwi.de/HTML/Death%20Note.html
+
+    PDF: https://ktane.timwi.de/PDF/Death%20Note.pdf
+
+
+    Death Note (deathNoteModule) v1.0.0
+
+    Module and Concept by eXish
+
+    Audio samples provided by Deaf and Aero
+
+    Twitch Plays supported'
+  version: 1.0.0
+  outputFolder: build
+  previewImage: {fileID: 2800000, guid: 76cabfbf65baf4c48b51a52273476853, type: 3}
