@@ -31,7 +31,7 @@ public class DeathNoteScript : MonoBehaviour {
     private string[] possiblecriminals = new string[] { "Barry Wendelson", "Kim Grefflen", "Timothy Terrence", "Raye Penber", "Harold Yugozaki", "Jule Fredrich", "Geraldine Venere", "Yuna Wattari", "Victor Palatine", "Cody Hammerton", "Ricky Jones", "Juliette Gabstine", "Zaku Hamachi", "Yvedear Balasuman", "Heinz Doof", "Burry Wendelson", "Perry Wondelson", "Kim Gremlin", "Kimberly Grefflin", "Tim Terrace", "Timothy Terronce", "Raye Penbar", "Raye Benber", "Harold Yugazaku", "Harol Yugozuki", "Julie Freedrich", "Gel Frodrich", "Gerald Vigenere", "Gareldine Venere", "Luna Wattaru", "Yuna Watterli", "Victor Palpatine", "Vector Palatine", "Cody Hampsterton", "Curdy Hamptonson", "Rick Joney", "Ricky Jones", "Juliette Gebstime", "Giliette Jabstine", "Zeku Hatachi", "Zoku Humachi", "Yvedore Belasuman", "Yvedear Balasuperman", "Heinz Doofenshmitz", "High Doof", "Brianne Bailey", "Terry Petershmit", "Gabriel Freeze", "Tao Lee", "Andy Benjing", "Andrew Chalice", "Charlie Mitch", "June Herring", "Gabby Shrihaka", "Justin Ma", "Kylie Deterny", "Xia Kenshi", "Tony Peterson", "Carly Heavens", "Benjamin Junebug", "Yukasa Wenshi", "Quinton Benter", "Ray Herding", "Brandon Kang", "River Jones", "Emily Holiday", "Jessica Neddy", "Anthony Strong", "Henry Long", "Oscar Higgins", "Lenard Greobrant", "Freddy Hertz" };
     private List<string> criminals = new List<string>();
     private List<string> typeofcrime = new List<string>();
-    private string[] allCauses = new string[] { "Heart Attack", "Electric Chair", "Drowned in Acid", "Crushed by Boulder", "Trip on Banana Peal", "Choked by Old Man", "Deadly Disease", "Shot Through the Heart", "Hit by Car", "Bomb Explosion" };
+    private string[] allCauses = new string[] { "Heart Attack", "Electric Chair", "Drowned in Acid", "Crushed by Boulder", "Trip on Banana Peel", "Choked by Old Man", "Deadly Disease", "Shot Through the Heart", "Hit by Car", "Bomb Explosion" };
     // -1 = any can be used, 0 = boulder and hit by car, 1 = acid, banana, and heart attack, 2 = chair, disease, and explosion, 3 = choked by old man and shot through heart
     private List<int> correctCause = new List<int>();
     private List<bool> die = new List<bool>();
@@ -480,7 +480,7 @@ public class DeathNoteScript : MonoBehaviour {
                     else if (typeofcrime[i] == "petty" && (stage == 1 || stage == 2 || stage == 4 || stage == 5) && !alwayshas.Contains(criminals[i]))
                     {
                         correctCause[i] = 1;
-                        Debug.LogFormat("[Death Note #{0}] Criminal {1} must be deleted through the cause of Drowned in Acid, Trip on Banana Peal, or Heart Attack.", moduleId, criminals[i]);
+                        Debug.LogFormat("[Death Note #{0}] Criminal {1} must be deleted through the cause of Drowned in Acid, Trip on Banana Peel, or Heart Attack.", moduleId, criminals[i]);
                     }
                     else if (typeofcrime[i] == "major" && (criminals[i].Split(' ')[0].Contains("A") || criminals[i].Split(' ')[0].Contains("C")) && !alwayshas.Contains(criminals[i]))
                     {
@@ -907,7 +907,7 @@ public class DeathNoteScript : MonoBehaviour {
                 reset();
                 return;
             }
-            if (correctCause[criminals.IndexOf(name)] == 0 && (cause != "CRUSHED BY BOULDER" && cause != "HIT BY CAR") || correctCause[criminals.IndexOf(name)] == 1 && (cause != "DROWNED IN ACID" && cause != "TRIP ON BANANA PEAL" && cause != "HEART ATTACK") || correctCause[criminals.IndexOf(name)] == 2 && (cause != "ELECTRIC CHAIR" && cause != "DEADLY DISEASE" && cause != "BOMB EXPLOSION") || correctCause[criminals.IndexOf(name)] == 3 && (cause != "CHOKED BY OLD MAN" && cause != "SHOT THROUGH THE HEART"))
+            if (correctCause[criminals.IndexOf(name)] == 0 && (cause != "CRUSHED BY BOULDER" && cause != "HIT BY CAR") || correctCause[criminals.IndexOf(name)] == 1 && (cause != "DROWNED IN ACID" && cause != "TRIP ON BANANA PEEL" && cause != "HEART ATTACK") || correctCause[criminals.IndexOf(name)] == 2 && (cause != "ELECTRIC CHAIR" && cause != "DEADLY DISEASE" && cause != "BOMB EXPLOSION") || correctCause[criminals.IndexOf(name)] == 3 && (cause != "CHOKED BY OLD MAN" && cause != "SHOT THROUGH THE HEART"))
             {
                 Debug.LogFormat("[Death Note #{0}] You wrote down the cause of death for '{1}' to be '{2}', but due to this criminal having cause of death restrictions this cannot happen! You will suffer a cruel death... Strike! Module resetting...", moduleId, name, cause);
                 GetComponent<KMBombModule>().HandleStrike();
@@ -1765,7 +1765,7 @@ public class DeathNoteScript : MonoBehaviour {
                                     switch (UnityEngine.Random.Range(0, 3))
                                     {
                                         case 0: tempcause = "Drowned in Acid"; break;
-                                        case 1: tempcause = "Trip on Banana Peal"; break;
+                                        case 1: tempcause = "Trip on Banana Peel"; break;
                                         case 2: tempcause = "Heart Attack"; break;
                                     }
                                 }
