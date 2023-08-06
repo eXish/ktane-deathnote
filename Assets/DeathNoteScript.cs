@@ -1458,6 +1458,18 @@ public class DeathNoteScript : MonoBehaviour {
             buttons[1].OnInteract();
             yield break;
         }
+        if (Regex.IsMatch(command, @"^\s*call\s*$", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant))
+        {
+            yield return null;
+            buttons[2].OnInteract();
+            yield break;
+        }
+        if (Regex.IsMatch(command, @"^\s*newspaper\s*$", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant))
+        {
+            yield return null;
+            buttons[3].OnInteract();
+            yield break;
+        }
         if (Regex.IsMatch(command, @"^\s*enter\s*$", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant) || Regex.IsMatch(command, @"^\s*newline\s*$", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant))
         {
             yield return null;
