@@ -11110,6 +11110,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7939ddbcdb1bf8047a0d2e3c31f24848, type: 3}
   - {fileID: 8300000, guid: cae2990a25799d148bc9e7ef7f56299d, type: 3}
   - {fileID: 8300000, guid: 5e5321be37b05a74091b611a5263d3fd, type: 3}
+  - {fileID: 8300000, guid: 34d1fcab9aff92b44ba7e00ce79945e1, type: 3}
+  - {fileID: 8300000, guid: a641dabf5ac94db4ba43bfb7c3133ea7, type: 3}
+  - {fileID: 8300000, guid: be173b3df8095f142ae2668b2ce5015e, type: 3}
+  - {fileID: 8300000, guid: 143a31247be820c4ca71ae96b4b5514c, type: 3}
   objMats:
   - {fileID: 2100000, guid: 62afa8b81a3276041a4a6814589eff41, type: 2}
   copyMats:

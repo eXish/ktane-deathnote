@@ -502,10 +502,12 @@ public class DeathNoteScript : MonoBehaviour {
         }
         if (buttonToPress == 0)
         {
+            kiraInstructionsIndexes.Add(UnityEngine.Random.Range(18, 20));
             Debug.LogFormat("[Death Note #{0}] The real Kira wishes for you to return the death note immediately.", moduleId);
         }
         else if (buttonToPress == 1)
         {
+            kiraInstructionsIndexes.Add(UnityEngine.Random.Range(20, 22));
             Debug.LogFormat("[Death Note #{0}] The real Kira wishes for you to pass on the death note to a new Kira immediately.", moduleId);
         }
         else if (buttonToPress == 3)
@@ -582,10 +584,10 @@ public class DeathNoteScript : MonoBehaviour {
                 audio.PlayGameSoundAtTransform(KMSoundOverride.SoundEffect.ButtonPress, pressed.transform);
                 if (buttonToPress != 2)
                 {
-                    Debug.LogFormat("[Death Note #{0}] You decided to go on with your day, which is not what you should have done. You will suffer a cruel death... Strike! Module resetting...", moduleId);
+                    Debug.LogFormat("[Death Note #{0}] You decided to go on with your day, which is not what you should have done. You will suffer a cruel death... Strike! Resetting day...", moduleId);
                     GetComponent<KMBombModule>().HandleStrike();
                     previousCriminals.Clear();
-                    stage = -1;
+                    stage--;
                     reset();
                     return;
                 }
@@ -599,10 +601,10 @@ public class DeathNoteScript : MonoBehaviour {
                 }
                 else if (die.Count(f => f == true) == 0 && (pageeighttexts.Count != 1 || pageeightbase.text.Length != 0))
                 {
-                    Debug.LogFormat("[Death Note #{0}] You did not leave the death note empty and there were supposed to be no deletions today. You will suffer a cruel death... Strike! Module resetting...", moduleId);
+                    Debug.LogFormat("[Death Note #{0}] You did not leave the death note empty and there were supposed to be no deletions today. You will suffer a cruel death... Strike! Resetting day...", moduleId);
                     GetComponent<KMBombModule>().HandleStrike();
                     previousCriminals.Clear();
-                    stage = -1;
+                    stage--;
                     reset();
                 }
                 else
@@ -628,10 +630,10 @@ public class DeathNoteScript : MonoBehaviour {
                 audio.PlayGameSoundAtTransform(KMSoundOverride.SoundEffect.ButtonPress, pressed.transform);
                 if (buttonToPress != 0 && buttonToPress != 3)
                 {
-                    Debug.LogFormat("[Death Note #{0}] You decided to return the death note to the real Kira, which is not what you should have done. You will suffer a cruel death... Strike! Module resetting...", moduleId);
+                    Debug.LogFormat("[Death Note #{0}] You decided to return the death note to the real Kira, which is not what you should have done. You will suffer a cruel death... Strike! Resetting day...", moduleId);
                     GetComponent<KMBombModule>().HandleStrike();
                     previousCriminals.Clear();
-                    stage = -1;
+                    stage--;
                     reset();
                     return;
                 }
@@ -640,10 +642,10 @@ public class DeathNoteScript : MonoBehaviour {
                     Debug.LogFormat("[Death Note #{0}] You decided to return the death note to the real Kira, which is what you should have done.", moduleId);
                     if (pageeighttexts.Count != 1 || pageeightbase.text.Length != 0)
                     {
-                        Debug.LogFormat("[Death Note #{0}] You did not leave the death note empty before returning the death note to the real Kira. You will suffer a cruel death... Strike! Module resetting...", moduleId);
+                        Debug.LogFormat("[Death Note #{0}] You did not leave the death note empty before returning the death note to the real Kira. You will suffer a cruel death... Strike! Resetting day...", moduleId);
                         GetComponent<KMBombModule>().HandleStrike();
                         previousCriminals.Clear();
-                        stage = -1;
+                        stage--;
                         reset();
                     }
                     else
@@ -664,10 +666,10 @@ public class DeathNoteScript : MonoBehaviour {
                     }
                     else if (die.Count(f => f == true) == 0 && (pageeighttexts.Count != 1 || pageeightbase.text.Length != 0))
                     {
-                        Debug.LogFormat("[Death Note #{0}] You did not leave the death note empty and there were supposed to be no deletions today before returning the death note to the real Kira. You will suffer a cruel death... Strike! Module resetting...", moduleId);
+                        Debug.LogFormat("[Death Note #{0}] You did not leave the death note empty and there were supposed to be no deletions today before returning the death note to the real Kira. You will suffer a cruel death... Strike! Resetting day...", moduleId);
                         GetComponent<KMBombModule>().HandleStrike();
                         previousCriminals.Clear();
-                        stage = -1;
+                        stage--;
                         reset();
                     }
                     else
@@ -686,10 +688,10 @@ public class DeathNoteScript : MonoBehaviour {
                 audio.PlayGameSoundAtTransform(KMSoundOverride.SoundEffect.ButtonPress, pressed.transform);
                 if (buttonToPress != 1 && buttonToPress != 4)
                 {
-                    Debug.LogFormat("[Death Note #{0}] You decided to mail the death note to a new Kira, which is not what you should have done. You will suffer a cruel death... Strike! Module resetting...", moduleId);
+                    Debug.LogFormat("[Death Note #{0}] You decided to mail the death note to a new Kira, which is not what you should have done. You will suffer a cruel death... Strike! Resetting day...", moduleId);
                     GetComponent<KMBombModule>().HandleStrike();
                     previousCriminals.Clear();
-                    stage = -1;
+                    stage--;
                     reset();
                     return;
                 }
@@ -698,10 +700,10 @@ public class DeathNoteScript : MonoBehaviour {
                     Debug.LogFormat("[Death Note #{0}] You decided to mail the death note to a new Kira, which is what you should have done.", moduleId);
                     if (pageeighttexts.Count != 1 || pageeightbase.text.Length != 0)
                     {
-                        Debug.LogFormat("[Death Note #{0}] You did not leave the death note empty before mailing the death note to a new Kira. You will suffer a cruel death... Strike! Module resetting...", moduleId);
+                        Debug.LogFormat("[Death Note #{0}] You did not leave the death note empty before mailing the death note to a new Kira. You will suffer a cruel death... Strike! Resetting day...", moduleId);
                         GetComponent<KMBombModule>().HandleStrike();
                         previousCriminals.Clear();
-                        stage = -1;
+                        stage--;
                         reset();
                     }
                     else
@@ -722,10 +724,10 @@ public class DeathNoteScript : MonoBehaviour {
                     }
                     else if (die.Count(f => f == true) == 0 && (pageeighttexts.Count != 1 || pageeightbase.text.Length != 0))
                     {
-                        Debug.LogFormat("[Death Note #{0}] You did not leave the death note empty and there were supposed to be no deletions today before mailing the death note to a new Kira. You will suffer a cruel death... Strike! Module resetting...", moduleId);
+                        Debug.LogFormat("[Death Note #{0}] You did not leave the death note empty and there were supposed to be no deletions today before mailing the death note to a new Kira. You will suffer a cruel death... Strike! Resetting day...", moduleId);
                         GetComponent<KMBombModule>().HandleStrike();
                         previousCriminals.Clear();
-                        stage = -1;
+                        stage--;
                         reset();
                     }
                     else
@@ -804,10 +806,10 @@ public class DeathNoteScript : MonoBehaviour {
         {
             if (pageeighttexts[i].text.Split(' ').Length != 5 && pageeighttexts[i].text.Split(' ').Length != 6 && pageeighttexts[i].text.Split(' ').Length != 7)
             {
-                Debug.LogFormat("[Death Note #{0}] You wrote a line in the death note (line {1}) that does not match the \"[Name] [Time of Death (hrs:mins:secs)] [Cause of Death]\" format! You will suffer a cruel death... Strike! Module resetting...", moduleId, i + 1);
+                Debug.LogFormat("[Death Note #{0}] You wrote a line in the death note (line {1}) that does not match the \"[Name] [Time of Death (hrs:mins:secs)] [Cause of Death]\" format! You will suffer a cruel death... Strike! Resetting day...", moduleId, i + 1);
                 GetComponent<KMBombModule>().HandleStrike();
                 previousCriminals.Clear();
-                stage = -1;
+                stage--;
                 reset();
                 return;
             }
@@ -815,66 +817,66 @@ public class DeathNoteScript : MonoBehaviour {
             string name = line[0].First() + line[0].Substring(1, line[0].Length - 1).ToLower() + " " + line[1].First() + line[1].Substring(1, line[1].Length - 1).ToLower();
             if (!criminals.Contains(name))
             {
-                Debug.LogFormat("[Death Note #{0}] You wrote down the name '{1}' which did not appear in the broadcast! You will suffer a cruel death... Strike! Module resetting...", moduleId, name);
+                Debug.LogFormat("[Death Note #{0}] You wrote down the name '{1}' which did not appear in the broadcast! You will suffer a cruel death... Strike! Resetting day...", moduleId, name);
                 GetComponent<KMBombModule>().HandleStrike();
                 previousCriminals.Clear();
-                stage = -1;
+                stage--;
                 reset();
                 return;
             }
             else if (!die[criminals.IndexOf(name)])
             {
-                Debug.LogFormat("[Death Note #{0}] You wrote down the name '{1}' who is a criminal but cannot be deleted today! You will suffer a cruel death... Strike! Module resetting...", moduleId, name);
+                Debug.LogFormat("[Death Note #{0}] You wrote down the name '{1}' who is a criminal but cannot be deleted today! You will suffer a cruel death... Strike! Resetting day...", moduleId, name);
                 GetComponent<KMBombModule>().HandleStrike();
                 previousCriminals.Clear();
-                stage = -1;
+                stage--;
                 reset();
                 return;
             }
             if (line[2].Length != 8)
             {
-                Debug.LogFormat("[Death Note #{0}] You wrote down the time of death for '{1}' to be '{2}', which is not a valid hrs:mins:secs format! You will suffer a cruel death... Strike! Module resetting...", moduleId, name, line[2]);
+                Debug.LogFormat("[Death Note #{0}] You wrote down the time of death for '{1}' to be '{2}', which is not a valid hrs:mins:secs format! You will suffer a cruel death... Strike! Resetting day...", moduleId, name, line[2]);
                 GetComponent<KMBombModule>().HandleStrike();
                 previousCriminals.Clear();
-                stage = -1;
+                stage--;
                 reset();
                 return;
             }
             string[] times = line[2].Split(':');
             if (times.Length != 3)
             {
-                Debug.LogFormat("[Death Note #{0}] You wrote down the time of death for '{1}' to be '{2}', which is not a valid hrs:mins:secs format! You will suffer a cruel death... Strike! Module resetting...", moduleId, name, line[2]);
+                Debug.LogFormat("[Death Note #{0}] You wrote down the time of death for '{1}' to be '{2}', which is not a valid hrs:mins:secs format! You will suffer a cruel death... Strike! Resetting day...", moduleId, name, line[2]);
                 GetComponent<KMBombModule>().HandleStrike();
                 previousCriminals.Clear();
-                stage = -1;
+                stage--;
                 reset();
                 return;
             }
             int temphrs, tempmins, tempsecs = 0;
             if (!int.TryParse(times[0], out temphrs) || !int.TryParse(times[1], out tempmins) || !int.TryParse(times[2], out tempsecs))
             {
-                Debug.LogFormat("[Death Note #{0}] You wrote down the time of death for '{1}' to be '{2}', but the hours, minutes, or seconds are not numbers! You will suffer a cruel death... Strike! Module resetting...", moduleId, name, line[2]);
+                Debug.LogFormat("[Death Note #{0}] You wrote down the time of death for '{1}' to be '{2}', but the hours, minutes, or seconds are not numbers! You will suffer a cruel death... Strike! Resetting day...", moduleId, name, line[2]);
                 GetComponent<KMBombModule>().HandleStrike();
                 previousCriminals.Clear();
-                stage = -1;
+                stage--;
                 reset();
                 return;
             }
             if (temphrs > 23 || tempmins > 59 || tempsecs > 59)
             {
-                Debug.LogFormat("[Death Note #{0}] You wrote down the time of death for '{1}' to be '{2}', but the written time is out of range of 00:00:00 and 23:59:59! You will suffer a cruel death... Strike! Module resetting...", moduleId, name, line[2]);
+                Debug.LogFormat("[Death Note #{0}] You wrote down the time of death for '{1}' to be '{2}', but the written time is out of range of 00:00:00 and 23:59:59! You will suffer a cruel death... Strike! Resetting day...", moduleId, name, line[2]);
                 GetComponent<KMBombModule>().HandleStrike();
                 previousCriminals.Clear();
-                stage = -1;
+                stage--;
                 reset();
                 return;
             }
             if ((hrs * 3600 + mins * 60 + secs) > (temphrs * 3600 + tempmins * 60 + tempsecs))
             {
-                Debug.LogFormat("[Death Note #{0}] You wrote down the time of death for '{1}' to be '{2}', but this time has already passed today! You will suffer a cruel death... Strike! Module resetting...", moduleId, name, line[2]);
+                Debug.LogFormat("[Death Note #{0}] You wrote down the time of death for '{1}' to be '{2}', but this time has already passed today! You will suffer a cruel death... Strike! Resetting day...", moduleId, name, line[2]);
                 GetComponent<KMBombModule>().HandleStrike();
                 previousCriminals.Clear();
-                stage = -1;
+                stage--;
                 reset();
                 return;
             }
@@ -882,10 +884,10 @@ public class DeathNoteScript : MonoBehaviour {
             {
                 if ((timedie[criminals.IndexOf(name)] == 1 && (temphrs > 12 || temphrs < 4)) || (timedie[criminals.IndexOf(name)] == 2 && (temphrs > 20 || temphrs < 14)) || (timedie[criminals.IndexOf(name)] == 3 && (tempmins > 58 || tempmins < 31)) || (timedie[criminals.IndexOf(name)] == 4 && (tempmins > 45)) || (timedie[criminals.IndexOf(name)] == 5 && !isPrime(tempsecs)))
                 {
-                    Debug.LogFormat("[Death Note #{0}] You wrote down the time of death for '{1}' to be '{2}', but due to this criminal having time restrictions this cannot happen! You will suffer a cruel death... Strike! Module resetting...", moduleId, name, line[2]);
+                    Debug.LogFormat("[Death Note #{0}] You wrote down the time of death for '{1}' to be '{2}', but due to this criminal having time restrictions this cannot happen! You will suffer a cruel death... Strike! Resetting day...", moduleId, name, line[2]);
                     GetComponent<KMBombModule>().HandleStrike();
                     previousCriminals.Clear();
-                    stage = -1;
+                    stage--;
                     reset();
                     return;
                 }
@@ -900,19 +902,19 @@ public class DeathNoteScript : MonoBehaviour {
             }
             if (!validCause(cause))
             {
-                Debug.LogFormat("[Death Note #{0}] You wrote down the cause of death for '{1}' to be '{2}', but this is not in the list of all causes of death! You will suffer a cruel death... Strike! Module resetting...", moduleId, name, cause);
+                Debug.LogFormat("[Death Note #{0}] You wrote down the cause of death for '{1}' to be '{2}', but this is not in the list of all causes of death! You will suffer a cruel death... Strike! Resetting day...", moduleId, name, cause);
                 GetComponent<KMBombModule>().HandleStrike();
                 previousCriminals.Clear();
-                stage = -1;
+                stage--;
                 reset();
                 return;
             }
             if (correctCause[criminals.IndexOf(name)] == 0 && (cause != "CRUSHED BY BOULDER" && cause != "HIT BY CAR") || correctCause[criminals.IndexOf(name)] == 1 && (cause != "DROWNED IN ACID" && cause != "TRIP ON BANANA PEEL" && cause != "HEART ATTACK") || correctCause[criminals.IndexOf(name)] == 2 && (cause != "ELECTRIC CHAIR" && cause != "DEADLY DISEASE" && cause != "BOMB EXPLOSION") || correctCause[criminals.IndexOf(name)] == 3 && (cause != "CHOKED BY OLD MAN" && cause != "SHOT THROUGH THE HEART"))
             {
-                Debug.LogFormat("[Death Note #{0}] You wrote down the cause of death for '{1}' to be '{2}', but due to this criminal having cause of death restrictions this cannot happen! You will suffer a cruel death... Strike! Module resetting...", moduleId, name, cause);
+                Debug.LogFormat("[Death Note #{0}] You wrote down the cause of death for '{1}' to be '{2}', but due to this criminal having cause of death restrictions this cannot happen! You will suffer a cruel death... Strike! Resetting day...", moduleId, name, cause);
                 GetComponent<KMBombModule>().HandleStrike();
                 previousCriminals.Clear();
-                stage = -1;
+                stage--;
                 reset();
                 return;
             }
@@ -955,10 +957,10 @@ public class DeathNoteScript : MonoBehaviour {
         }
         else
         {
-            Debug.LogFormat("[Death Note #{0}] Not all necessary criminals were deleted! You will suffer a cruel death... Strike! Module resetting...", moduleId);
+            Debug.LogFormat("[Death Note #{0}] Not all necessary criminals were deleted! You will suffer a cruel death... Strike! Resetting day...", moduleId);
             GetComponent<KMBombModule>().HandleStrike();
             previousCriminals.Clear();
-            stage = -1;
+            stage--;
             reset();
             return;
         }
@@ -1184,18 +1186,18 @@ public class DeathNoteScript : MonoBehaviour {
         }
         if (askStrike)
         {
-            Debug.LogFormat("[Death Note #{0}] Kira does not like to repeat instructions! You will suffer a cruel death... Strike! Module resetting...", moduleId);
+            Debug.LogFormat("[Death Note #{0}] Kira does not like to repeat instructions! You will suffer a cruel death... Strike! Resetting day...", moduleId);
             GetComponent<KMBombModule>().HandleStrike();
             previousCriminals.Clear();
-            stage = -1;
+            stage--;
             reset();
         }
         else if (stage < 3)
         {
-            Debug.LogFormat("[Death Note #{0}] You are risking Kira getting caught by calling now! You will suffer a cruel death... Strike! Module resetting...", moduleId);
+            Debug.LogFormat("[Death Note #{0}] You are risking Kira getting caught by calling now! You will suffer a cruel death... Strike! Resetting day...", moduleId);
             GetComponent<KMBombModule>().HandleStrike();
             previousCriminals.Clear();
-            stage = -1;
+            stage--;
             reset();
         }
     }
@@ -1385,10 +1387,10 @@ public class DeathNoteScript : MonoBehaviour {
                 if (hrs > 23)
                 {
                     hrs = 0;
-                    Debug.LogFormat("[Death Note #{0}] You did not complete all your deletions before the next day started! You will suffer a cruel death... Strike! Module resetting...", moduleId);
+                    Debug.LogFormat("[Death Note #{0}] You did not complete all your deletions before the next day started! You will suffer a cruel death... Strike! Resetting day...", moduleId);
                     GetComponent<KMBombModule>().HandleStrike();
                     previousCriminals.Clear();
-                    stage = -1;
+                    stage--;
                     reset();
                 }
             }
