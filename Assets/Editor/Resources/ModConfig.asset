@@ -23,13 +23,13 @@ MonoBehaviour:
     PDF: https://ktane.timwi.de/PDF/Death%20Note.pdf
 
 
-    Death Note (deathNoteModule) v1.0.3
+    Death Note (deathNoteModule) v1.0.4
 
     Module and Concept by eXish
 
     Audio samples provided by Deaf and Aero
 
     Twitch Plays supported'
-  version: 1.0.3
+  version: 1.0.4
   outputFolder: build
   previewImage: {fileID: 2800000, guid: 76cabfbf65baf4c48b51a52273476853, type: 3}

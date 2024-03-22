@@ -1763,6 +1763,7 @@ public class DeathNoteScript : MonoBehaviour {
                             }
                             letsandsymbs[36].OnInteract();
                             yield return new WaitForSeconds(0.1f);
+                            newCause:
                             string tempcause = "";
                             if (correctCause[i] != -1)
                             {
@@ -1805,6 +1806,8 @@ public class DeathNoteScript : MonoBehaviour {
                             {
                                 tempcause = allCauses[UnityEngine.Random.Range(0, allCauses.Length)];
                             }
+                            if ((pageeighttexts[pageeightindex].text + tempcause).Length >= 49)
+                                goto newCause;
                             for (int j = 0; j < tempcause.Length; j++)
                             {
                                 letsandsymbs[Array.IndexOf(strs, (tempcause[j] + "").ToUpper())].OnInteract();
