@@ -765,7 +765,7 @@ public class DeathNoteScript : MonoBehaviour {
                 pageeighttexts[pageeightindex].text = "";
                 temp.transform.localPosition = new Vector3(3.5f, 0.0001f, -3.95f + (0.28f * (pageeighttexts.Count()-1)));
             }
-            else if (pressed != letsandsymbs[38] && pageeighttexts[pageeightindex].text.Length < 49)
+            else if (pressed != letsandsymbs[38] && pageeighttexts[pageeightindex].text.Length < 52)
             {
                 audio.PlaySoundAtTransform("write", pageeightparent);
                 pageeighttexts[pageeightindex].text += pressed.gameObject.GetComponentInChildren<TextMesh>().text;
@@ -1621,7 +1621,7 @@ public class DeathNoteScript : MonoBehaviour {
             yield return null;
             if (parameters.Length == 1)
             {
-                yield return "sendtochaterror Please the text that should be written!";
+                yield return "sendtochaterror Please specify the text that should be written!";
             }
             if (!open)
             {
@@ -1645,7 +1645,7 @@ public class DeathNoteScript : MonoBehaviour {
             arg = arg.Trim();
             for (int j = 0; j < arg.Length; j++)
             {
-                if (pageeighttexts[pageeightindex].text.Length >= 49)
+                if (pageeighttexts[pageeightindex].text.Length >= 52)
                 {
                     yield break;
                 }
@@ -1763,7 +1763,6 @@ public class DeathNoteScript : MonoBehaviour {
                             }
                             letsandsymbs[36].OnInteract();
                             yield return new WaitForSeconds(0.1f);
-                            newCause:
                             string tempcause = "";
                             if (correctCause[i] != -1)
                             {
@@ -1806,8 +1805,6 @@ public class DeathNoteScript : MonoBehaviour {
                             {
                                 tempcause = allCauses[UnityEngine.Random.Range(0, allCauses.Length)];
                             }
-                            if ((pageeighttexts[pageeightindex].text + tempcause).Length >= 49)
-                                goto newCause;
                             for (int j = 0; j < tempcause.Length; j++)
                             {
                                 letsandsymbs[Array.IndexOf(strs, (tempcause[j] + "").ToUpper())].OnInteract();
