@@ -969,6 +969,8 @@ public class DeathNoteScript : MonoBehaviour {
                     die[i] = false;
                     timedie[i] = 0;
                 }
+                if (timedie[i] == 0)
+                    Debug.LogFormat("[Death Note #{0}] You did this at {1}:{2}:{3}, making criminal {4} not deletable.", moduleId, (hrs < 10) ? "0" + hrs : "" + hrs, (mins < 10) ? "0" + mins : "" + mins, (secs < 10) ? "0" + secs : "" + secs, criminals[i]);
             }
         }
     }
