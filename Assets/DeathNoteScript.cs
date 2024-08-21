@@ -595,6 +595,7 @@ public class DeathNoteScript : MonoBehaviour {
                 {
                     Debug.LogFormat("[Death Note #{0}] You decided to go on with your day, which is what you should have done.", moduleId);
                 }
+                removeTimeCriminals();
                 if (die.Count(f => f == true) != 0)
                 {
                     doChecks(0);
@@ -660,6 +661,7 @@ public class DeathNoteScript : MonoBehaviour {
                 else if (buttonToPress == 3)
                 {
                     Debug.LogFormat("[Death Note #{0}] You decided to return the death note to the real Kira, which is what you should have done.", moduleId);
+                    removeTimeCriminals();
                     if (die.Count(f => f == true) != 0)
                     {
                         doChecks(1);
@@ -718,6 +720,7 @@ public class DeathNoteScript : MonoBehaviour {
                 else if (buttonToPress == 4)
                 {
                     Debug.LogFormat("[Death Note #{0}] You decided to mail the death note to a new Kira, which is what you should have done.", moduleId);
+                    removeTimeCriminals();
                     if (die.Count(f => f == true) != 0)
                     {
                         doChecks(2);
@@ -775,33 +778,6 @@ public class DeathNoteScript : MonoBehaviour {
 
     private void doChecks(int type)
     {
-        // Get rid of time based criminals whose times have already passed
-        for (int i = 0; i < die.Count; i++)
-        {
-            if (timedie[i] != 0)
-            {
-                if (timedie[i] == 1 && (hrs > 12))
-                {
-                    die[i] = false;
-                    timedie[i] = 0;
-                }
-                else if (timedie[i] == 2 && (hrs > 20))
-                {
-                    die[i] = false;
-                    timedie[i] = 0;
-                }
-                else if (timedie[i] == 3 && (hrs == 23 && mins > 58))
-                {
-                    die[i] = false;
-                    timedie[i] = 0;
-                }
-                else if (timedie[i] == 4 && (hrs == 23 && mins > 45))
-                {
-                    die[i] = false;
-                    timedie[i] = 0;
-                }
-            }
-        }
         for (int i = 0; i < pageeighttexts.Count; i++)
         {
             if (pageeighttexts[i].text.Split(' ').Length != 5 && pageeighttexts[i].text.Split(' ').Length != 6 && pageeighttexts[i].text.Split(' ').Length != 7)
@@ -963,6 +939,37 @@ public class DeathNoteScript : MonoBehaviour {
             stage--;
             reset();
             return;
+        }
+    }
+
+    private void removeTimeCriminals()
+    {
+        // Get rid of time based criminals whose times have already passed
+        for (int i = 0; i < die.Count; i++)
+        {
+            if (timedie[i] != 0)
+            {
+                if (timedie[i] == 1 && (hrs > 12))
+                {
+                    die[i] = false;
+                    timedie[i] = 0;
+                }
+                else if (timedie[i] == 2 && (hrs > 20))
+                {
+                    die[i] = false;
+                    timedie[i] = 0;
+                }
+                else if (timedie[i] == 3 && (hrs == 23 && mins > 58))
+                {
+                    die[i] = false;
+                    timedie[i] = 0;
+                }
+                else if (timedie[i] == 4 && (hrs == 23 && mins > 45))
+                {
+                    die[i] = false;
+                    timedie[i] = 0;
+                }
+            }
         }
     }
 
