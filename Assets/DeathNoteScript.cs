@@ -778,6 +778,15 @@ public class DeathNoteScript : MonoBehaviour {
 
     private void doChecks(int type)
     {
+        if (pageeighttexts.Count == 1 || pageeightbase.text.Length == 0)
+        {
+            Debug.LogFormat("[Death Note #{0}] You left the death note empty and there were supposed to be some deletions today{1}. You will suffer a cruel death... Strike! Resetting day...", moduleId, type == 1 ? " before returning the death note to the real Kira" : type == 2 ? " before mailing the death note to a new Kira" : "");
+            GetComponent<KMBombModule>().HandleStrike();
+            previousCriminals.Clear();
+            stage--;
+            reset();
+            return;
+        }
         for (int i = 0; i < pageeighttexts.Count; i++)
         {
             if (pageeighttexts[i].text.Split(' ').Length != 5 && pageeighttexts[i].text.Split(' ').Length != 6 && pageeighttexts[i].text.Split(' ').Length != 7)
